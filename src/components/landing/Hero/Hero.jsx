@@ -4,6 +4,7 @@ import SplitText from '../../../content/TextAnimations/SplitText/SplitText';
 import landingBlur from '../../../assets/svg/landing-blur.svg';
 import { GoArrowRight } from 'react-icons/go';
 import FadeContent from '../../../content/Animations/FadeContent/FadeContent';
+import Shuffle from '@content/TextAnimations/Shuffle/Shuffle';
 
 const ResponsiveSplitText = ({ isMobile, text, ...rest }) =>
   isMobile ? <span className={rest.className}>{text}</span> : <SplitText text={text} {...rest} />;
@@ -50,24 +51,18 @@ const Hero = () => {
         </FadeContent>
 
         <h1 className="landing-title">
-          <ResponsiveSplitText
-            isMobile={isMobile}
-            text="React Components"
-            className="hero-split"
-            splitType="chars"
-            delay={30}
-            duration={2}
-            ease="elastic.out(0.5, 0.3)"
-          />
-          <br />
-          <ResponsiveSplitText
-            isMobile={isMobile}
-            text="For Creative Developers"
-            className="hero-split"
-            splitType="chars"
-            delay={30}
-            duration={2}
-            ease="elastic.out(0.5, 0.3)"
+          <Shuffle
+            text="Epoch Lab"
+            shuffleDirection="right"
+            duration={0.35}
+            animationMode="evenodd"
+            shuffleTimes={1}
+            ease="power3.out"
+            stagger={0.03}
+            threshold={0.1}
+            triggerOnce={true}
+            triggerOnHover={true}
+            respectReducedMotion={true}
           />
         </h1>
 
