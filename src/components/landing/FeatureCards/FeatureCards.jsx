@@ -209,16 +209,16 @@ const FeatureCards = () => {
             <div className="messages-gif-wrapper">
               <img src="/assets/messages.gif" alt="Messages animation" className="messages-gif" />
             </div>
-            <h2>{isMobile ? '100' : <CountUp to={100} />}%</h2>
-            <h3>Free &amp; Open Source</h3>
-            <p>Loved by devs around the world</p>
+            <h2>{isMobile ? '20' : <CountUp to={20} />}+</h2>
+            <h3>就业/实习人数</h3>
+            <p>实验室成员们都在这里发光发热</p>
           </ParticleCard>
 
           <ParticleCard className="feature-card card2" disableAnimations={isMobile}>
             <div className="components-gif-wrapper">
               <img src="/assets/components.gif" alt="Components animation" className="components-gif" />
             </div>
-            <h2>{isMobile ? '110' : <CountUp to={110} />}+</h2>
+            <h2>Epoch</h2>
             <h3>Creative Components</h3>
             <p>Growing weekly &amp; only getting better</p>
           </ParticleCard>

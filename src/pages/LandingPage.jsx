@@ -54,54 +54,30 @@ import Shuffle from '@content/TextAnimations/Shuffle/Shuffle';
 
 const LandingPage = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [variant, setVariant] = useState('square');
-  const [pixelSize, setPixelSize] = useState(6);
-  const [patternScale, setPatternScale] = useState(1);
-  const [patternDensity, setPatternDensity] = useState(1.4);
-  const [pixelSizeJitter, setPixelSizeJitter] = useState(0);
-  const [enableRipples, setEnableRipples] = useState(true);
-  const [liquid, setLiquid] = useState(false);
-  const [speed, setSpeed] = useState(0.5);
-  const [edgeFade, setEdgeFade] = useState(0.25);
-  const [color, setColor] = useState('#22c55e');
 
   return (
-    // <section className="landing-wrapper">
-    //   <div style={{ width: '100%', height: 'auto', position: 'relative' }}>
-    //     <title>React Bits - Animated UI Components For React</title>
-    //          <Announcement />
-
-    //     {/* <PixelBlast
-    //       variant={variant}
-    //       pixelSize={pixelSize}
-    //       color={color}
-    //       patternScale={patternScale}
-    //       patternDensity={patternDensity}
-    //       pixelSizeJitter={pixelSizeJitter}
-    //       enableRipples={enableRipples}
-    //       liquid={liquid}
-    //       speed={speed}
-    //       edgeFade={edgeFade}
-    //     >
-
-    //     </PixelBlast> */}
-    //     {/* <Shuffle
-    //     text="Epoch Lab"
-    //     shuffleDirection="right"
-    //     duration={0.35}
-    //     animationMode="evenodd"
-    //     shuffleTimes={1}
-    //     ease="power3.out"
-    //     stagger={0.03}
-    //     threshold={0.1}
-    //     triggerOnce={true}
-    //     triggerOnHover={true}
-    //     respectReducedMotion={true}
-    //   /> */}
-    //   </div>
-    // </section>
     <section className="landing-wrapper">
-      {/* <title>React Bits - Animated UI Components For React</title> */}
+      <div style={{ position: 'absolute', zIndex: -1, top: 0, left: 0, width: '100%', height: '100%'}}>
+        <PixelBlast
+          variant="circle"
+          pixelSize={6}
+          color="#B19EEF"
+          patternScale={5}
+          patternDensity={1.2}
+          pixelSizeJitter={0.5}
+          enableRipples
+          rippleSpeed={4}
+          rippleThickness={0.12}
+          rippleIntensityScale={1.5}
+          liquid
+          liquidStrength={0.12}
+          liquidRadius={1.2}
+          liquidWobbleSpeed={5}
+          speed={1}
+          edgeFade={0.25}
+          transparent
+        />
+      </div>
 
       <Announcement />
 
@@ -111,23 +87,6 @@ const LandingPage = () => {
         </div>
       )}
 
-      {/* <PlasmaWaveV2 yOffset={0} xOffset={40} rotationDeg={-45} /> */}
-
-      {/* <PixelBlast
-        variant={variant}
-        pixelSize={pixelSize}
-        color={color}
-        patternScale={patternScale}
-        patternDensity={patternDensity}
-        pixelSizeJitter={pixelSizeJitter}
-        enableRipples={enableRipples}
-        liquid={liquid}
-        speed={speed}
-        edgeFade={edgeFade}
-        yOffset={0} xOffset={40} rotationDeg={-45}
-      >
-
-      </PixelBlast> */}
       <Hero />
       <FeatureCards />
       <Testimonials />

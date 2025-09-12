@@ -21,23 +21,6 @@ const Hero = () => {
 
   return (
     <div className="landing-content">
-      <img
-        src={landingBlur}
-        alt=""
-        aria-hidden="true"
-        className="landing-gradient-blur"
-        draggable="false"
-        style={{ zIndex: 5 }}
-      />
-
-      <img
-        src={landingBlur}
-        alt=""
-        aria-hidden="true"
-        className="landing-gradient-blur"
-        draggable="false"
-        style={{ zIndex: 5 }}
-      />
 
       <div className="hero-main-content">
         <FadeContent className="hero-tag-fade" blur>

@@ -106,7 +106,7 @@
 
 .feature-card {
   user-select: none;
-  background: #060010;
+  /* background: #060010; */
   border: 1px solid rgba(169, 148, 184, 0.2);
   border-radius: 16px;
   padding: 2rem;

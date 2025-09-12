@@ -11,7 +11,7 @@
   padding: 0 4em;
   height: 160px;
   margin: 0 auto;
-  background: linear-gradient(to bottom, #060010, transparent);
+  background: linear-gradient(to bottom, #c7d2fe, transparent);
 }
 
 .header-container {
@@ -108,7 +108,7 @@
   font-weight: 500;
   padding: 0 0 0 1.4rem;
   height: calc(60px - 2px);
-  background: linear-gradient(135deg, rgba(124, 58, 237, 1), rgba(24, 47, 255, 0.6));
+  background: #7c3aed;
   background-size: 200% 200%;
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);

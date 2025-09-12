@@ -11,7 +11,6 @@
   left: 0;
   width: 300px;
   height: 100vh;
-  background: linear-gradient(to right, #060010, transparent);
   z-index: 2;
   pointer-events: none;
 }
@@ -23,7 +22,6 @@
   right: 0;
   width: 300px;
   height: 100vh;
-  background: linear-gradient(to left, #060010, transparent);
   z-index: 2;
   pointer-events: none;
 }
