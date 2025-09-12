@@ -202,34 +202,25 @@ const FeatureCards = () => {
   return (
     <div className="features-section">
       <div className="features-container">
-        <GlobalSpotlight gridRef={gridRef} disableAnimations={isMobile} />
 
         <div className="bento-grid" ref={gridRef}>
           <ParticleCard className="feature-card card1" disableAnimations={isMobile}>
-            <div className="messages-gif-wrapper">
-              <img src="/assets/messages.gif" alt="Messages animation" className="messages-gif" />
-            </div>
-            <h2>{isMobile ? '20' : <CountUp to={20} />}+</h2>
-            <h3>就业/实习人数</h3>
-            <p>实验室成员们都在这里发光发热</p>
+            <h2 className='mb-4!'>{isMobile ? '20' : <CountUp to={20} />}+</h2>
+            <h3>正式/实习人数</h3>
+            <p>实验室已知去向成员广泛就职(正式/实习)于国内外知名科技企业，包括：腾讯、阿里巴巴、字节跳动、美团、滴滴、贝壳、零跑、安恒信息、青云科技以及小黑盒等行业领军企业，我们在这里，让技术改变世界。</p>
           </ParticleCard>
 
           <ParticleCard className="feature-card card2" disableAnimations={isMobile}>
-            <div className="components-gif-wrapper">
-              <img src="/assets/components.gif" alt="Components animation" className="components-gif" />
-            </div>
-            <h2>Epoch</h2>
-            <h3>Creative Components</h3>
-            <p>Growing weekly &amp; only getting better</p>
+            <h2 className='mb-4!'>Epoch</h2>
+            <h3>关于我们</h3>
+            <p>回声实验室创立于 2011 年 9 月（前身为易控实验室）隶属于计算机学院是一个完全由在校大学生建立的项目研发，推广团队。 回声是一个专注于 Web(前端/后端/测试)应用开发的实验室。回声实验室本身是一个开放的实验室，目的在于分享知识，创建一个技术分享的平台，面向全校对前后端知识(Java、JavaWeb、Spring 系列、HTML5、CSS、JavaScript、Vue 等) 感兴趣的同学。</p>
+            <p>在回声实验室，我们致力于构建一个充满活力和创造力的社区，这里汇聚了对技术充满热情的同学。我们的目标是让每位成员都能在茫茫技术坎途中寻找到自己热爱坚守的方向，用代码开辟通向大厂的道路，最终铸就一个自由的辉煌未来。</p>
           </ParticleCard>
 
           <ParticleCard className="feature-card card4" disableAnimations={isMobile}>
-            <div className="switch-gif-wrapper">
-              <img src="/assets/switch.gif" alt="Switch animation" className="switch-gif" />
-            </div>
-            <h2>{isMobile ? '4' : <CountUp to={4} />}</h2>
-            <h3>Component Variants</h3>
-            <p>Pick your favourite technologies</p>
+            <h2 className='mb-4!'>{isMobile ? '156' : <CountUp to={156} />}</h2>
+            <h3>实验室成员</h3>
+            <p>从 2011 年至今，共有156名伙伴加入回声实验室，他们来自计算机学院、软件学院、网络空间安全学院...... 我们来自不同的专业，不同的年级，不同的地域，我们有着不同的经历，不同的梦想，但在这里在回声我们相互学习，一同成长，紧紧相依。</p>
           </ParticleCard>
         </div>
       </div>

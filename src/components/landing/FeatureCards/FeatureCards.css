@@ -106,7 +106,6 @@
 
 .feature-card {
   user-select: none;
-  /* background: #060010; */
   border: 1px solid rgba(169, 148, 184, 0.2);
   border-radius: 16px;
   padding: 2rem;
@@ -167,6 +166,11 @@
   background: #0d0716;
 }
 
+/* Hover 时将卡片内除 h2 外的所有文本设为白色 */
+.feature-card:hover :not(h2) {
+  color: #fff !important;
+}
+
 .feature-card:hover::before {
   opacity: 1;
 }
@@ -183,7 +187,7 @@
 .feature-card h3 {
   font-size: 1rem;
   font-weight: 600;
-  color: #fff;
+  color: black;
   margin-bottom: 0.2rem;
   letter-spacing: -0.01em;
   flex-shrink: 0;
@@ -207,8 +211,8 @@
 }
 
 .feature-card p {
-  color: rgba(161, 148, 184, 0.9);
-  line-height: 1;
+  color: black;
+  line-height: 1.5;
   font-size: 0.95rem;
   text-align: left;
   max-width: 100%;
