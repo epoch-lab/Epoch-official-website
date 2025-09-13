@@ -41,21 +41,21 @@ const DisplayHeader = ({ activeItem }) => {
         <div className="nav-cta-group">
           <nav className="landing-nav-items" ref={navRef}>
             <Link className={`nav-link ${activeItem === 'home' && 'active-link'}`} to="/">
-              Home
+              关于我们
             </Link>
             <Link className="nav-link" to="/text-animations/split-text">
-              Docs
+              组织架构
             </Link>
             <Link className={`nav-link ${activeItem === 'showcase' && 'active-link'}`} to="/showcase">
-              Showcase
+              毕业去向
             </Link>
           </nav>
 
           <button
             className="cta-button"
-            onClick={() => window.open('https://github.com/DavidHDev/react-bits', '_blank')}
+            onClick={() => window.open('https://github.com/epoch-lab', '_blank')}
           >
-            Star On GitHub
+            关注我们
             <span ref={starCountRef} style={{ opacity: 0 }}>
               <img src={star} alt="Star Icon" />
               {stars}

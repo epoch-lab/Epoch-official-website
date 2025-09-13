@@ -7,6 +7,7 @@ import FadeContent from '../../../content/Animations/FadeContent/FadeContent';
 import BlurText from '@/content/TextAnimations/BlurText/BlurText';
 import logoUrl from '@/assets/svg/logo.svg';
 import bg from '@/assets/svg/bg.svg';
+import LaserFlow from '@/content/Animations/LaserFlow/LaserFlow';
 
 const ResponsiveSplitText = ({ isMobile, text, ...rest }) =>
   isMobile ? <span className={rest.className}>{text}</span> : <SplitText text={text} {...rest} />;
@@ -22,49 +23,54 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="landing-content">
-      <div className="flex flex-col justify-center flex-1 p-8 relative bg-center bg-no-repeat bg-cover bg-fixed h-3/5 rounded-2xl " style={{
-        backgroundImage: `url(${bg})`,
-      }}>
+    <div>
+      <div className="absolute top-0 left-0 w-full h-full"
+      >
 
-        <h1 className="landing-title flex gap-2">
-          <BlurText
-            text="Epoch Lab."
-            delay={50}
-            animateBy="words"
-            direction="top"
-            className="text-6xl sm:text-6xl  md:text-8xl font-bold text-white"
-          />
-        </h1>
-        <div>
-          <BlurText
-            text="Code builds the future"
-            delay={250}
-            animateBy="words"
-            direction="top"
-            className="text-2xl text-white"
-          />
-          <BlurText
-            text=">>>"
-            delay={330}
-            animateBy="letters"
-            direction="top"
-            className="text-2xl text-white"
-          />
-        </div>
+      </div>
+      <div className="landing-content">
+        <div className="flex flex-col justify-center flex-1 p-8 relative bg-center bg-no-repeat bg-cover bg-fixed h-3/5 rounded-2xl " style={{
+          backgroundImage: `url(${bg})`,
+        }}>
 
-        <div
+          <h1 className="landing-title flex gap-2">
+            <BlurText
+              text="Epoch Lab."
+              delay={50}
+              animateBy="words"
+              direction="top"
+              className="text-6xl sm:text-6xl  md:text-8xl font-bold text-white"
+            />
+          </h1>
+          <div>
+            <BlurText
+              text="Code builds the future"
+              delay={250}
+              animateBy="words"
+              direction="top"
+              className="text-2xl text-white"
+            />
+            <BlurText
+              text=">>>"
+              delay={330}
+              animateBy="letters"
+              direction="top"
+              className="text-2xl text-white"
+            />
+          </div>
+
+          <div
             className="logo-mask w-80 h-80 right-0 absolute z-50"
             style={{
               maskImage: `url(${logoUrl})`,
               maskSize: 'contain',
               maskRepeat: 'no-repeat',
               maskPosition: 'center',
-              backgroundColor:'rgba(255,255,255,0.2)',
+              backgroundColor: 'rgba(255,255,255,0.2)',
             }}
           />
+        </div>
       </div>
-
     </div>
   );
 };
