@@ -4,6 +4,7 @@ import StartBuilding from '../components/landing/StartBuilding/StartBuilding';
 import Announcement from '../components/common/Misc/Announcement';
 import Footer from '../components/landing/Footer/Footer';
 import Hero from '../components/landing/Hero/Hero';
+import CareerCard from '../components/landing/CareerCard/CareerCard';
 import heroImage from '../assets/common/hero.webp';
 import DotGrid from '@/content/Backgrounds/DotGrid/DotGrid';
 
@@ -22,6 +23,7 @@ const LandingPage = () => {
       <Hero />
       <FeatureCards />
       <StartBuilding />
+      <CareerCard />
       <Footer />
     </section>
   );
