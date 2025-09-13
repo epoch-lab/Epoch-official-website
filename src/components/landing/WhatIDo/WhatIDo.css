@@ -1,0 +1,161 @@
+.what-i-do-section {
+  max-width:calc(1200px + 6em);
+  padding: 4rem 2rem;
+  color: #1a1a1a;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.what-i-do-container {
+  flex: 1;
+  max-width: none;
+}
+
+
+.what-i-do-title {
+  font-weight: 800;
+  margin-bottom: 3rem;
+  text-align: left;
+  background: linear-gradient(135deg, #fff 0%, #8660fa 20%, #a855f7 40%, #8400ff 60%, #a855f7 80%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease-in-out infinite;
+  z-index: 10;
+  font-size: 3rem;
+  position: relative;
+  background-size: 200% 200%;
+  position: relative;
+}
+
+.what-i-do-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #fff 0%, #8660fa 20%, #a855f7 40%, #8400ff 60%, #a855f7 80%, #fff 100%);
+  border-radius: 2px;
+  animation: gradientShift 4s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-item {
+  cursor: pointer;
+  border: 1px solid rgba(169, 148, 184, 0.2);
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: left;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 100%;
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+}
+
+.service-item:hover {
+  border-color: rgba(91, 33, 182, 0.4);
+  box-shadow: 0 8px 25px rgba(91, 33, 182, 0.15);
+}
+
+.service-item.expanded {
+  border-color: rgba(91, 33, 182, 0.5);
+  box-shadow: 0 8px 25px rgba(91, 33, 182, 0.2);
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.service-title {
+  flex: 1;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.service-chevron {
+  font-size: 1rem;
+  color: #5b21b6;
+  transition: transform 0.3s ease;
+}
+
+.service-item.expanded .service-chevron {
+  transform: rotate(180deg);
+}
+
+.service-content {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(91, 33, 182, 0.2);
+  animation: slideDown 0.3s ease;
+}
+
+.service-description {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-description li {
+  padding: 0.5rem 0;
+  color: rgba(26, 26, 26, 0.8);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.service-description li::before {
+  content: '•';
+  color: #5b21b6;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .what-i-do-title {
+    font-size: 2.5rem;
+  }
+  
+  .service-item {
+    padding: 1rem;
+  }
+  
+  .service-title {
+    font-size: 1.1rem;
+  }
+  
+  .service-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.25rem;
+  }
+}

@@ -4,6 +4,7 @@ import StartBuilding from '../components/landing/StartBuilding/StartBuilding';
 import Announcement from '../components/common/Misc/Announcement';
 import Footer from '../components/landing/Footer/Footer';
 import Hero from '../components/landing/Hero/Hero';
+import WhatIDo from '../components/landing/WhatIDo/WhatIDo';
 import heroImage from '../assets/common/hero.webp';
 import DotGrid from '@/content/Backgrounds/DotGrid/DotGrid';
 
@@ -13,14 +14,9 @@ const LandingPage = () => {
   return (
     <section className="landing-wrapper">
       <Announcement />
-
-      {/* {isMobile && (
-        <div className="mobile-hero-background-container">
-          <img src={heroImage} alt="Hero background" className="mobile-hero-background-image" />
-        </div>
-      )} */}
       <Hero />
       <FeatureCards />
+      <WhatIDo />
       <StartBuilding />
       <Footer />
     </section>
