@@ -1,0 +1,79 @@
+.ticket-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1100px;
+  min-height: 650px;
+}
+
+.ticket-left {
+  position: relative;
+  border-radius: 0.75rem;
+  min-height: 20rem;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid #bd8aeb;
+  border-right: 2px dashed #7e22ce;
+  box-shadow: 0 0 30px 0 rgba(102, 105, 220, 0.3);
+}
+
+.ticket-right {
+  display: flex;
+  min-height: 20rem;
+  height: 100%;
+  width: 20%;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  border-width: 2px;
+  border-left-width: 0;
+  border-color: rgb(168 85 247);
+  box-shadow: 0 0 30px 0 rgba(102, 105, 220, 0.3);
+}
+
+.carousel-container {
+  position: relative;
+  height: 14rem;
+  width: 90%;
+}
+
+.carousel-page {
+  margin-left: 20px;
+  margin-top: 20px;
+  min-height: 300px;
+}
+
+/* 自定义轮播图样式 */
+.carousel-container .ant-carousel .slick-dots li button {
+  background: #a168df !important;
+  opacity: 0.8;
+}
+
+.carousel-container .ant-carousel .slick-dots li.slick-active button::after {
+  background: #020103 !important;
+  opacity: 1;
+}
+/* 自定义箭头样式 */
+.carousel-container .ant-carousel .slick-prev,
+.carousel-container .ant-carousel .slick-next {
+    height: 30px;
+  color: #7e22ce !important;
+}
+
+.carousel-container .ant-carousel .slick-prev:hover,
+.carousel-container .ant-carousel .slick-next:hover {
+  color: #9333ea !important;
+}
+
+@media (max-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+    /* 小屏幕改为 2 列 */
+  }
+}
