@@ -1,6 +1,8 @@
-import './CareerCard.css';
+import './Ticket.css';
 import PixelBlast from '../../../content/Backgrounds/PixelBlast/PixelBlast';
 import logo from '../../../assets/svg/logo.svg';
+import NO1 from '../../../assets/svg/NO1.svg';
+import code from '../../../assets/svg/code.svg';
 import EPOCHtext from '../../../assets/svg/EPOCHtext.svg';
 import airplane from '../../../assets/svg/airplane.svg';
 import '../../../assets/font.css';
@@ -18,8 +20,8 @@ const Ticket = ({ title, list, itemKey }) => {
     }
     return pages;
   };
-
   const pages = paginateData(list, 8);
+
   return (
     <div className="ticket-container">
       <div className="ticket-left">
@@ -32,14 +34,16 @@ const Ticket = ({ title, list, itemKey }) => {
             patternDensity={1.4}
             pixelSizeJitter={0.6}
             enableRipples
-            rippleSpeed={0.6}
+            rippleSpeed={1}
             rippleThickness={0.12}
             rippleIntensityScale={1.5}
-            speed={0.6}
+            speed={1}
             edgeFade={0.25}
             transparent
           />
         </div>
+        <img src={NO1} className="absolute top-67 right-15 z-2 h-3.5 self-end" />
+
         <div className="mt-6 flex w-full justify-between text-xl text-black">
           <div className="ml-10 flex items-center">
             <img
@@ -109,7 +113,21 @@ const Ticket = ({ title, list, itemKey }) => {
         </div>
       </div>
       <div className="ticket-right">
-        <div className="h-18 w-full rounded-t-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-[#8469dc]"></div>
+        <div className="gradient-header" />
+        <span className="absolute z-20 mt-2 ml-5 w-full font-[cyrillic-pixel-7-1] text-4xl text-[#ffffff] [text-shadow:_1px_1px_0_#b13485,_-1px_-1px_0_#b13485,_1px_-1px_0_#b13485,_-1px_1px_0_#b13485]">
+          Epoch
+        </span>
+        <img
+          src={logo}
+          className="mt-5 mb-5 w-30 self-center"
+          style={{
+            filter: 'invert(46%) sepia(40%) saturate(3654%) hue-rotate(256deg) brightness(95%) contrast(60%)'
+          }}
+        />
+        <div className="flex h-10 w-full">
+          <img src={code} className="absolute left-11 h-10" />
+          <img src={code} className="absolute left-25 h-10" />
+        </div>
       </div>
     </div>
   );

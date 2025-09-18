@@ -25,7 +25,9 @@
 }
 
 .ticket-right {
+  position: relative;
   display: flex;
+  flex-direction: column;
   min-height: 20rem;
   height: 100%;
   width: 20%;
@@ -86,6 +88,16 @@
   width: 60px;
   background-color: #9e0ef7;
   opacity: 1;
+}
+
+.gradient-header {
+  position: relative;
+  z-index: 10;
+  height: 4.5rem;
+  width: 100%;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  background-image: linear-gradient(to right, #e8b1ff, #8a66ff);
 }
 
 @media (max-width: 768px) {
