@@ -3,15 +3,27 @@ import PixelBlast from '../../../content/Backgrounds/PixelBlast/PixelBlast';
 import logo from '../../../assets/svg/logo.svg';
 import NO1 from '../../../assets/svg/NO1.svg';
 import code from '../../../assets/svg/code.svg';
+import global from '../../../assets/svg/global.svg';
 import EPOCHtext from '../../../assets/svg/EPOCHtext.svg';
 import airplane from '../../../assets/svg/airplane.svg';
 import '../../../assets/font.css';
 import { Carousel, ConfigProvider } from 'antd';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 const Ticket = ({ title, list, itemKey }) => {
   const carouselRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(window.innerWidth < 768 ? 4 : 8);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth < 768 ? 4 : 8);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // 分页函数
   const paginateData = (data, itemsPerPage) => {
     const pages = [];
@@ -20,7 +32,7 @@ const Ticket = ({ title, list, itemKey }) => {
     }
     return pages;
   };
-  const pages = paginateData(list, 8);
+  const pages = paginateData(list, itemsPerPage);
 
   return (
     <div className="ticket-container">
@@ -44,8 +56,8 @@ const Ticket = ({ title, list, itemKey }) => {
         </div>
         <img src={NO1} className="absolute top-67 right-15 z-2 h-3.5 self-end" />
 
-        <div className="mt-6 flex w-full justify-between text-xl text-black">
-          <div className="ml-10 flex items-center">
+        <div className="ticket-header mt-6 flex w-full justify-between text-xl text-black">
+          <div className="ml-10 flex items-center max-md:hidden">
             <img
               src={logo}
               alt="Epoch Icon"
@@ -67,7 +79,7 @@ const Ticket = ({ title, list, itemKey }) => {
             theme={{
               components: {
                 Carousel: {
-                  arrowSize: 16,
+                  arrowSize: 15,
                   arrowOffset: -22
                 }
               }
@@ -85,11 +97,11 @@ const Ticket = ({ title, list, itemKey }) => {
             >
               {pages.map((page, pageIndex) => (
                 <div key={pageIndex} className="carousel-page">
-                  <div className="grid grid-cols-2 grid-rows-4 p-0">
+                  <div className="member-grid grid grid-cols-2 grid-rows-4 p-0">
                     {page.map((item, index) => (
-                      <div key={index} className="flex gap-2 rounded p-2 text-base">
-                        <p>{item.grade}</p>
-                        <p>{item.name}</p>
+                      <div key={index} className="md:t-0 flex gap-2 rounded text-base md:p-2">
+                        <p className="max-md:hidden">{item.grade}</p>
+                        <p className="w-13">{item.name}</p>
                         <p>{item[itemKey]}</p>
                       </div>
                     ))}
@@ -102,7 +114,7 @@ const Ticket = ({ title, list, itemKey }) => {
             {pages.map((_, index) => (
               <button
                 key={index}
-                className={`custom-dot ${currentPage === index ? 'custom-dot-active' : ''}`}
+                className={`custom-dot ${currentPage === index ? 'custom-dot-active' : ''} max-md:hidden`}
                 onClick={() => {
                   carouselRef.current.goTo(index);
                   setCurrentPage(index);
@@ -114,9 +126,12 @@ const Ticket = ({ title, list, itemKey }) => {
       </div>
       <div className="ticket-right">
         <div className="gradient-header" />
-        <span className="absolute z-20 mt-2 ml-5 w-full font-[cyrillic-pixel-7-1] text-4xl text-[#ffffff] [text-shadow:_1px_1px_0_#b13485,_-1px_-1px_0_#b13485,_1px_-1px_0_#b13485,_-1px_1px_0_#b13485]">
-          Epoch
-        </span>
+        <div className="absolute z-20 flex w-full">
+          <span className="mt-3 ml-5 w-full font-[cyrillic-pixel-7-1] text-4xl text-[#ffffff] [text-shadow:_1px_1px_0_#b13485,_-1px_-1px_0_#b13485,_1px_-1px_0_#b13485,_-1px_1px_0_#b13485]">
+            Epoch
+          </span>
+          <img src={global} className="mt-3 mr-10 w-10" />
+        </div>
         <img
           src={logo}
           className="mt-5 mb-5 w-30 self-center"
@@ -124,7 +139,7 @@ const Ticket = ({ title, list, itemKey }) => {
             filter: 'invert(46%) sepia(40%) saturate(3654%) hue-rotate(256deg) brightness(95%) contrast(60%)'
           }}
         />
-        <div className="flex h-10 w-full">
+        <div className="flex h-10 w-full max-md:hidden">
           <img src={code} className="absolute left-11 h-10" />
           <img src={code} className="absolute left-25 h-10" />
         </div>

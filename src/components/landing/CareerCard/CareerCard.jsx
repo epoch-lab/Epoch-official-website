@@ -17,7 +17,7 @@ const CareerCard = () => {
             }
           }}
         >
-          <Carousel draggable arrows dots={false}>
+          <Carousel draggable arrows={{ xs: false, sm: true }} dots={false}>
             <Ticket title="就业实习" list={careerList} itemKey="company" />
             <Ticket title="考研上岸" list={studentList} itemKey="college" />
           </Carousel>
