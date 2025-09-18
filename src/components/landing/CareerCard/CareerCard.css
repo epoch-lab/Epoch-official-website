@@ -49,26 +49,43 @@
   min-height: 300px;
 }
 
-/* 自定义轮播图样式 */
-.carousel-container .ant-carousel .slick-dots li button {
-  background: #a168df !important;
-  opacity: 0.8;
-}
-
-.carousel-container .ant-carousel .slick-dots li.slick-active button::after {
-  background: #020103 !important;
-  opacity: 1;
-}
 /* 自定义箭头样式 */
 .carousel-container .ant-carousel .slick-prev,
 .carousel-container .ant-carousel .slick-next {
-    height: 30px;
+  height: 30px;
   color: #7e22ce !important;
 }
 
 .carousel-container .ant-carousel .slick-prev:hover,
 .carousel-container .ant-carousel .slick-next:hover {
   color: #9333ea !important;
+}
+
+.custom-dots-container {
+  position: absolute;
+  z-index: 99;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.custom-dot {
+  width: 30px;
+  height: 3px;
+  background-color: #a595b4;
+  opacity: 0.8;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: ease 0.1s;
+}
+
+.custom-dot-active {
+  width: 60px;
+  background-color: #9e0ef7;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {

@@ -12,6 +12,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   cacheDir: 'node_modules/.vite',
   server: {
+    host: '127.0.0.1',
     hmr: true
   },
   resolve: {

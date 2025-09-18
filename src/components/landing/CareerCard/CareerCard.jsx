@@ -1,6 +1,7 @@
 import { Carousel, ConfigProvider } from 'antd';
-import FirstTicket from './FirstTicket';
-import SecondTicket from './SecondTicket';
+import Ticket from './Ticket';
+import { careerList, studentList } from './MemberList';
+
 const CareerCard = () => {
   return (
     <div className="align-center relative z-22 flex justify-center px-8 pb-0 select-none">
@@ -9,9 +10,6 @@ const CareerCard = () => {
           theme={{
             components: {
               Carousel: {
-                dotWidth: 50,
-                dotHeight: 4,
-                dotActiveWidth: 70,
                 dotOffset: -24,
                 arrowSize: 32,
                 arrowOffset: -22
@@ -20,8 +18,8 @@ const CareerCard = () => {
           }}
         >
           <Carousel draggable arrows dots={false}>
-            <FirstTicket />
-            <SecondTicket />
+            <Ticket title="就业实习" list={careerList} itemKey="company" />
+            <Ticket title="考研上岸" list={studentList} itemKey="college" />
           </Carousel>
         </ConfigProvider>
       </div>
