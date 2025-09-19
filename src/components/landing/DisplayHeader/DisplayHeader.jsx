@@ -40,15 +40,15 @@ const DisplayHeader = ({ activeItem }) => {
 
         <div className="nav-cta-group">
           <nav className="landing-nav-items" ref={navRef}>
-            <Link className={`nav-link ${activeItem === 'home' && 'active-link'}`} to="/">
+            <a className={`nav-link ${activeItem === 'home' && 'active-link'}`} href="#about">
               关于我们
-            </Link>
-            <Link className="nav-link" to="/text-animations/split-text">
+            </a>
+            <a className="nav-link" href="#technology">
               技术方向
-            </Link>
-            <Link className={`nav-link ${activeItem === 'showcase' && 'active-link'}`} to="/showcase">
+            </a>
+            <a className={`nav-link ${activeItem === 'showcase' && 'active-link'}`} href="#career">
               毕业去向
-            </Link>
+            </a>
           </nav>
 
           <button className="cta-button" onClick={() => window.open('https://github.com/epoch-lab', '_blank')}>

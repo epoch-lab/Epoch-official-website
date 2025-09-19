@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import FeatureCards from '../components/landing/FeatureCards/FeatureCards';
 import StartBuilding from '../components/landing/StartBuilding/StartBuilding';
 import Announcement from '../components/common/Misc/Announcement';
@@ -6,8 +6,6 @@ import Footer from '../components/landing/Footer/Footer';
 import Hero from '../components/landing/Hero/Hero';
 import CareerCard from '../components/landing/CareerCard/CareerCard';
 import WhatIDo from '../components/landing/WhatIDo/WhatIDo';
-import heroImage from '../assets/common/hero.webp';
-import DotGrid from '@/content/Backgrounds/DotGrid/DotGrid';
 
 const LandingPage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -16,10 +14,10 @@ const LandingPage = () => {
     <section className="landing-wrapper">
       <Announcement />
       <Hero />
-      <FeatureCards />
-      <WhatIDo />
+      <FeatureCards id="about" />
+      <WhatIDo id="technology" />
       <StartBuilding />
-      <CareerCard />
+      <CareerCard id="career" />
       <Footer />
     </section>
   );

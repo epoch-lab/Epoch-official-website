@@ -18,7 +18,7 @@ const CareerCard = () => {
   return (
     <section className="career-section flex flex-col flex-wrap gap-8">
       <h2 className="ca-title">毕业去向</h2>
-      <div className="carousel-container pd-0 m-0 h-full min-h-[650px] self-center">
+      <div className="carousel-container pd-0 m-0 flex h-full min-h-[450px] flex-col justify-center self-center">
         <ConfigProvider
           theme={{
             components: {
