@@ -6,7 +6,6 @@
   justify-content: center;
   align-items: center;
   max-width: 1100px;
-  min-height: 650px;
 }
 
 .ticket-left {
@@ -21,7 +20,7 @@
   flex-direction: column;
   border: 2px solid #bd8aeb;
   border-right: 2px dashed #7e22ce;
-  box-shadow: 0 0 30px 0 rgba(102, 105, 220, 0.3);
+  box-shadow: 0 0 22px 0 rgba(102, 105, 220, 0.3);
 }
 
 .ticket-right {
@@ -37,7 +36,7 @@
   border-width: 2px;
   border-left-width: 0;
   border-color: rgb(168 85 247);
-  box-shadow: 0 0 30px 0 rgba(102, 105, 220, 0.3);
+  box-shadow: 0 0 22px 0 rgba(102, 105, 220, 0.3);
 }
 
 .carousel-container {

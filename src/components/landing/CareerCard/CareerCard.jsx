@@ -2,7 +2,7 @@ import { Carousel, ConfigProvider } from 'antd';
 import Ticket from './Ticket';
 import { careerList, studentList } from './MemberList';
 import { useState, useEffect } from 'react';
-
+import './CareerCard.css';
 const CareerCard = () => {
   const [hasArrows, setHasArrow] = useState(window.innerWidth >= 1100);
 
@@ -16,8 +16,9 @@ const CareerCard = () => {
   }, []);
 
   return (
-    <div className="align-center relative z-22 flex justify-center px-8 pb-0 select-none">
-      <div className="carousel-container pd-0 m-0 h-full min-h-[650px]">
+    <section className="career-section flex flex-col flex-wrap gap-8">
+      <h2 className="ca-title">毕业去向</h2>
+      <div className="carousel-container pd-0 m-0 h-full min-h-[650px] self-center">
         <ConfigProvider
           theme={{
             components: {
@@ -35,7 +36,7 @@ const CareerCard = () => {
           </Carousel>
         </ConfigProvider>
       </div>
-    </div>
+    </section>
   );
 };
 
