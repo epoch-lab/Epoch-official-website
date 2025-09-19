@@ -1,6 +1,7 @@
 import './Ticket.css';
 import PixelBlast from '../../../content/Backgrounds/PixelBlast/PixelBlast';
 import logo from '../../../assets/svg/logo.svg';
+import logo2 from '../../../assets/svg/gradient-logo.svg';
 import NO1 from '../../../assets/svg/NO1.svg';
 import code from '../../../assets/svg/code.svg';
 import global from '../../../assets/svg/global.svg';
@@ -14,10 +15,12 @@ const Ticket = ({ title, list, itemKey }) => {
   const carouselRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(window.innerWidth < 768 ? 4 : 8);
+  const [hasArrows, setHasArrow] = useState(window.innerWidth >= 1100);
 
   useEffect(() => {
     const handleResize = () => {
       setItemsPerPage(window.innerWidth < 768 ? 4 : 8);
+      setHasArrow(window.innerWidth >= 1100);
     };
 
     window.addEventListener('resize', handleResize);
@@ -66,12 +69,12 @@ const Ticket = ({ title, list, itemKey }) => {
                 filter: 'invert(16%) sepia(99%) saturate(4154%) hue-rotate(266deg) brightness(85%) contrast(91%)'
               }}
             />
-            <span className="ml-2 font-[YeZiGongChangTianQingSong-2] text-2xl text-[#7b3ab9]">回声实验室</span>
+            <span className="ml-2 w-40 font-[YeZiGongChangTianQingSong-2] text-2xl text-[#7b3ab9]">回声实验室</span>
           </div>
-          <div className="mr-20 flex items-center">
+          <div className="mr-16 flex items-center">
             <img src={EPOCHtext} className="mr-2 w-30" />
-            <img src={airplane} className="mr-3 w-8" />
-            <span className="font-[SanJiHuaChaoTi-Cu-2] text-2xl">{title}</span>
+            <img src={airplane} className="w-8" />
+            <span className="ml-2 font-[SanJiHuaChaoTi-Cu-2] text-2xl">{title}</span>
           </div>
         </div>
         <div className="carousel-container">
@@ -89,7 +92,7 @@ const Ticket = ({ title, list, itemKey }) => {
               ref={carouselRef}
               className="top-0 left-0 z-10 h-50 w-full"
               infinite
-              arrows
+              arrows={hasArrows}
               autoplay
               autoplaySpeed={6000}
               dots={false}
@@ -99,10 +102,10 @@ const Ticket = ({ title, list, itemKey }) => {
                 <div key={pageIndex} className="carousel-page">
                   <div className="member-grid grid grid-cols-2 grid-rows-4 p-0">
                     {page.map((item, index) => (
-                      <div key={index} className="lg:t-0 flex gap-2 rounded text-base lg:p-2">
-                        <p className="max-[1106px]:hidden">{item.grade}</p>
+                      <div key={index} className="flex gap-2 rounded text-base lg:p-2">
+                        <p className="w-13 max-[1106px]:hidden">{item.grade}</p>
                         <p className="w-13">{item.name}</p>
-                        <p>{item[itemKey]}</p>
+                        <p className="line-clamp-1 w-55">{item[itemKey]}</p>
                       </div>
                     ))}
                   </div>
@@ -133,7 +136,7 @@ const Ticket = ({ title, list, itemKey }) => {
           <img src={global} className="w-10" />
         </div>
         <img
-          src={logo}
+          src={logo2}
           className="w-30 self-center max-[1106px]:mb-14 max-md:mb-0"
           style={{
             filter: 'invert(46%) sepia(40%) saturate(3654%) hue-rotate(256deg) brightness(95%) contrast(60%)'

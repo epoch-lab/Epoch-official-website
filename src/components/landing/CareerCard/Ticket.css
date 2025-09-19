@@ -43,7 +43,7 @@
 .carousel-container {
   position: relative;
   height: 14rem;
-  width: 90%;
+  width: 93%;
 }
 
 .carousel-page {
@@ -55,7 +55,6 @@
 /* 自定义箭头样式 */
 .carousel-container .ant-carousel .slick-prev,
 .carousel-container .ant-carousel .slick-next {
-  height: 30px;
   color: #7e22ce !important;
 }
 

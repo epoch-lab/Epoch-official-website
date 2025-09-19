@@ -44,17 +44,14 @@ const DisplayHeader = ({ activeItem }) => {
               关于我们
             </Link>
             <Link className="nav-link" to="/text-animations/split-text">
-              组织架构
+              技术方向
             </Link>
             <Link className={`nav-link ${activeItem === 'showcase' && 'active-link'}`} to="/showcase">
               毕业去向
             </Link>
           </nav>
 
-          <button
-            className="cta-button"
-            onClick={() => window.open('https://github.com/epoch-lab', '_blank')}
-          >
+          <button className="cta-button" onClick={() => window.open('https://github.com/epoch-lab', '_blank')}>
             关注我们
             <span ref={starCountRef} style={{ opacity: 0 }}>
               <img src={star} alt="Star Icon" />
