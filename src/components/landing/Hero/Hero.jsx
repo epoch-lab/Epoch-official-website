@@ -62,10 +62,19 @@ const Hero = () => {
           <div
             className="logo-mask w-80 h-80 right-0 absolute z-50"
             style={{
-              maskImage: `url(${logoUrl})`,
-              maskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              maskPosition: 'center',
+            // Standard mask properties
+            maskImage: `url(${logoUrl})`,
+            maskSize: 'contain',
+            maskRepeat: 'no-repeat',
+            maskPosition: 'center',
+            // WebKit prefixed for Safari/iOS
+            WebkitMaskImage: `url(${logoUrl})`,
+            WebkitMaskSize: 'contain',
+            WebkitMaskRepeat: 'no-repeat',
+            WebkitMaskPosition: 'center',
+            // Shorthand fallback (some browsers parse this better)
+            mask: `url(${logoUrl}) no-repeat center / contain`,
+            WebkitMask: `url(${logoUrl}) no-repeat center / contain`,
               backgroundColor: 'rgba(255,255,255,0.2)',
             }}
           />
