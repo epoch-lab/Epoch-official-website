@@ -18,8 +18,8 @@ const LandingPage = () => {
       <Hero />
       <FeatureCards />
       <WhatIDo />
-      <StartBuilding />
       <CareerCard />
+      <StartBuilding />
       <Footer />
     </section>
   );
