@@ -31,6 +31,15 @@ const DisplayHeader = ({ activeItem }) => {
     }
   }, [stars]);
 
+  const handleNavClick = e => {
+    e.preventDefault();
+    const targetId = e.currentTarget.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="header">
       <div className="header-container">
@@ -40,13 +49,21 @@ const DisplayHeader = ({ activeItem }) => {
 
         <div className="nav-cta-group">
           <nav className="landing-nav-items" ref={navRef}>
-            <a className={`nav-link ${activeItem === 'home' && 'active-link'}`} href="#about">
+            <a className={`nav-link ${activeItem === 'home' && 'active-link'}`} href="#about" onClick={handleNavClick}>
               关于我们
             </a>
-            <a className="nav-link" href="#technology">
+            <a
+              className={`nav-link ${activeItem === 'technology' && 'active-link'}`}
+              href="#technology"
+              onClick={handleNavClick}
+            >
               技术方向
             </a>
-            <a className={`nav-link ${activeItem === 'showcase' && 'active-link'}`} href="#career">
+            <a
+              className={`nav-link ${activeItem === 'showcase' && 'active-link'}`}
+              href="#career"
+              onClick={handleNavClick}
+            >
               毕业去向
             </a>
           </nav>

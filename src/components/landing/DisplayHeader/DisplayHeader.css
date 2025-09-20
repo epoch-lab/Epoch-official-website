@@ -14,6 +14,12 @@
   background: linear-gradient(to bottom, #c7d2fe, transparent);
 }
 
+#about,
+#technology,
+#career {
+  scroll-margin-top: 100px;
+}
+
 .header-container {
   display: flex;
   align-items: center;
