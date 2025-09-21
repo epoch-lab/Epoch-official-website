@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import FeatureCards from '../components/landing/FeatureCards/FeatureCards';
 import StartBuilding from '../components/landing/StartBuilding/StartBuilding';
-import Announcement from '../components/common/Misc/Announcement';
+// import Announcement from '../components/common/Misc/Announcement';
 import Footer from '../components/landing/Footer/Footer';
 import Hero from '../components/landing/Hero/Hero';
 import CareerCard from '../components/landing/CareerCard/CareerCard';
@@ -49,7 +49,7 @@ const LandingPage = () => {
   return (
     <section className="landing-wrapper">
       <DisplayHeader activeItem={activeItem} />
-      <Announcement />
+      {/* <Announcement /> */}
       <Hero />
       <div id="about" ref={aboutRef}>
         <FeatureCards id="about" />
@@ -57,10 +57,10 @@ const LandingPage = () => {
       <div id="technology" ref={techRef}>
         <WhatIDo id="technology" />
       </div>
-      <StartBuilding />
       <div id="career" ref={careerRef}>
         <CareerCard id="career" />
       </div>
+      <StartBuilding />
       <Footer />
     </section>
   );

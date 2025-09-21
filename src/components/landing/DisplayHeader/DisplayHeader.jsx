@@ -2,14 +2,14 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { Logo } from '../../common/Misc/SVGComponents';
-import { useStars } from '../../../hooks/useStars';
+// import { useStars } from '../../../hooks/useStars';
 import star from '../../../assets/common/star.svg';
 import './DisplayHeader.css';
 
 const DisplayHeader = ({ activeItem }) => {
   const navRef = useRef(null);
   const starCountRef = useRef(null);
-  const stars = useStars();
+  const stars = 'Github';
 
   useEffect(() => {
     if (stars && starCountRef.current) {
