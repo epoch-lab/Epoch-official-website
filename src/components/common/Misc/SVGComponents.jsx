@@ -29,17 +29,14 @@ export const Logo = () => {
   }, []);
 
   return (
-    <div className='flex items-center justify-center' ref={svgRef}>
-        <div
-            className="logo-mask w-10 h-10  z-50"
-            style={{
-              maskImage: `url(${logoUrl})`,
-              maskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              maskPosition: 'center',
-              backgroundColor:'rgba(255,255,255)',
+    <div className='flex items-center justify-center gap-2' ref={svgRef}>
+       <img
+          src={logoUrl}
+          className="logo-mask w-8 z-50"
+          style={{
+            opacity: 0.1,
             }}
-          />
+        />
       <h2 className='text-2xl font-bold text-white'>Epoch</h2>
     </div>
   );

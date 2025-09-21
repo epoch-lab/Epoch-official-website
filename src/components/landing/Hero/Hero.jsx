@@ -42,33 +42,29 @@ const Hero = () => {
               className="text-6xl sm:text-6xl  md:text-8xl font-bold text-white"
             />
           </h1>
-          <div>
+          <div className="landing-subtitle">
             <BlurText
               text="Code builds the future"
               delay={250}
               animateBy="words"
               direction="top"
-              className="text-2xl text-white"
+              className="text-2xl text-white z-50 "
             />
             <BlurText
               text=">>>"
               delay={330}
               animateBy="letters"
               direction="top"
-              className="text-2xl text-white"
+              className="text-2xl text-white z-50"
             />
           </div>
-
-          <div
-            className="logo-mask w-80 h-80 right-0 absolute z-50"
-            style={{
-              maskImage: `url(${logoUrl})`,
-              maskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              maskPosition: 'center',
-              backgroundColor: 'rgba(255,255,255,0.2)',
+          <img
+          src={logoUrl}
+          className="logo-mask w-80  right-0 absolute z-0 "
+          style={{
+            opacity: 0.2,
             }}
-          />
+        />
         </div>
       </div>
     </div>
