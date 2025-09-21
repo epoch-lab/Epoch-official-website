@@ -93,7 +93,7 @@ const Ticket = ({ title, list, itemKey }) => {
               ref={carouselRef}
               className="top-0 left-0 z-10 h-50 w-full"
               infinite
-              arrows={hasArrows}
+              arrows
               autoplay
               autoplaySpeed={6000}
               dots={false}
@@ -101,12 +101,12 @@ const Ticket = ({ title, list, itemKey }) => {
             >
               {pages.map((page, pageIndex) => (
                 <div key={pageIndex} className="carousel-page">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 p-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 p-0 ">
                     {page.map((item, index) => (
-                      <div key={index} className="flex gap-2 rounded text-base p-2">
-                        <p className="w-22 line-clamp-1 ">{item.grade}</p>
-                        <p className="w-20 line-clamp-1">{item.name}</p>
-                        <p className="line-clamp-1 w-40">{item[itemKey]}</p>
+                      <div key={index} className="grid grid-cols-[80px_80px_1fr] text-base p-2">
+                        <p className="">{item.grade}</p>
+                        <p className="">{item.name}</p>
+                        <p className="line-clamp-1">{item[itemKey]}</p>
                       </div>
                     ))}
                   </div>
