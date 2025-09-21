@@ -14,12 +14,12 @@ import { useRef, useState, useEffect } from 'react';
 const Ticket = ({ title, list, itemKey }) => {
   const carouselRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(window.innerWidth < 768 ? 4 : 8);
+  const [itemsPerPage, setItemsPerPage] = useState(window.innerWidth < 640 ? 4 : 8);
   const [hasArrows, setHasArrow] = useState(window.innerWidth >= 1100);
 
   useEffect(() => {
     const handleResize = () => {
-      setItemsPerPage(window.innerWidth < 768 ? 4 : 8);
+      setItemsPerPage(window.innerWidth < 640 ? 4 : 8);
       setHasArrow(window.innerWidth >= 1100);
     };
 
@@ -28,13 +28,14 @@ const Ticket = ({ title, list, itemKey }) => {
   }, []);
 
   // 分页函数
-  const paginateData = (data, itemsPerPage) => {
+  const paginateData = (data) => {
     const pages = [];
     for (let i = 0; i < data.length; i += itemsPerPage) {
       pages.push(data.slice(i, i + itemsPerPage));
     }
     return pages;
   };
+
   const pages = paginateData(list, itemsPerPage);
 
   return (
@@ -100,12 +101,12 @@ const Ticket = ({ title, list, itemKey }) => {
             >
               {pages.map((page, pageIndex) => (
                 <div key={pageIndex} className="carousel-page">
-                  <div className="member-grid grid grid-cols-2 grid-rows-4 p-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 p-0">
                     {page.map((item, index) => (
-                      <div key={index} className="flex gap-2 rounded text-base lg:p-2">
-                        <p className="line-clamp-1 w-15 max-[1106px]:hidden">{item.grade}</p>
-                        <p className="line-clamp-1 w-13">{item.name}</p>
-                        <p className="line-clamp-1 w-55">{item[itemKey]}</p>
+                      <div key={index} className="flex gap-2 rounded text-base p-2">
+                        <p className="w-22 line-clamp-1 ">{item.grade}</p>
+                        <p className="w-20 line-clamp-1">{item.name}</p>
+                        <p className="line-clamp-1 w-40">{item[itemKey]}</p>
                       </div>
                     ))}
                   </div>
