@@ -20,9 +20,6 @@ export default defineConfig({
       '@': '/src',
       '@utils': path.resolve(__dirname, 'src/utils'),
       '@content': path.resolve(__dirname, 'src/content'),
-      '@tailwind': path.resolve(__dirname, 'src/tailwind'),
-      '@ts-default': path.resolve(__dirname, 'src/ts-default'),
-      '@ts-tailwind': path.resolve(__dirname, 'src/ts-tailwind')
     },
     dedupe: ['react', 'react-dom']
   },

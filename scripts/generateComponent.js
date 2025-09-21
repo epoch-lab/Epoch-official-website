@@ -18,10 +18,6 @@ const componentNameLower = componentName.charAt(0).toLowerCase() + componentName
 
 const paths = {
   content: path.join(__dirname, '../src/content', componentType, componentName),
-  tailwind: path.join(__dirname, '../src/tailwind', componentType, componentName),
-  ts: path.join(__dirname, '../src/ts-default', componentType, componentName),
-  tsTailwind: path.join(__dirname, '../src/ts-tailwind', componentType, componentName),
-  demo: path.join(__dirname, '../src/demo', componentType),
   constants: path.join(__dirname, '../src/constants/code', componentType)
 };
 
@@ -34,11 +30,6 @@ Object.values(paths).forEach(dir => {
 const files = [
   path.join(paths.content, `${componentName}.jsx`),
   path.join(paths.content, `${componentName}.css`),
-  path.join(paths.tailwind, `${componentName}.jsx`),
-  path.join(paths.ts, `${componentName}.tsx`),
-  path.join(paths.ts, `${componentName}.css`),
-  path.join(paths.tsTailwind, `${componentName}.tsx`),
-  path.join(paths.demo, `${componentName}Demo.jsx`),
   path.join(paths.constants, `${componentNameLower}Code.js`)
 ];
 

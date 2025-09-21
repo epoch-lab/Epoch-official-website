@@ -10,11 +10,8 @@
     "shadcn:build": "npm run shadcn:generate && shadcn build",
     "shadcn:generate": "node ./scripts/generateShadcnRegistry.js",
     "llms:text": "node ./scripts/generateLlmsText.js",
-    "jsrepo:build": "concurrently -p \"[{name}]\" -n \"default,tailwind,ts-default,ts-tailwind,readmes\" \"npm run jsrepo:default\" \"npm run jsrepo:tailwind\" \"npm run jsrepo:ts-default\" \"npm run jsrepo:ts-tailwind\" \"node ./scripts/generateJsrepoReadmes.js\"",
+    "jsrepo:build": "concurrently -p \"[{name}]\" -n \"default,readmes\" \"npm run jsrepo:default\" \"node ./scripts/generateJsrepoReadmes.js\"",
     "jsrepo:default": "jsrepo build --dirs ./src/content --output-dir ./public/default",
-    "jsrepo:tailwind": "jsrepo build --dirs ./src/tailwind --output-dir ./public/tailwind",
-    "jsrepo:ts-default": "jsrepo build --dirs ./src/ts-default --output-dir ./public/ts/default",
-    "jsrepo:ts-tailwind": "jsrepo build --dirs ./src/ts-tailwind --output-dir ./public/ts/tailwind",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext js,jsx --fix",
     "format": "prettier --write ."
