@@ -5,7 +5,6 @@ import { forceChakraDarkTheme } from './utils/utils';
 
 import DisplayHeader from './components/landing/DisplayHeader/DisplayHeader';
 import LandingPage from './pages/LandingPage';
-import ShowcasePage from './pages/ShowcasePage';
 
 function AppContent() {
   const location = useLocation();
@@ -23,7 +22,6 @@ function AppContent() {
       {!isCategoryPage && <DisplayHeader activeItem={getActiveItem()} />}
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
-        <Route exact path="/showcase" element={<ShowcasePage />} />
       </Routes>
     </>
   );
