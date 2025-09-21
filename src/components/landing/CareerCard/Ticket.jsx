@@ -104,7 +104,7 @@ const Ticket = ({ title, list, itemKey }) => {
                     {page.map((item, index) => (
                       <div key={index} className="flex gap-2 rounded text-base lg:p-2">
                         <p className="line-clamp-1 w-15 max-[1106px]:hidden">{item.grade}</p>
-                        <p className="w-13">{item.name}</p>
+                        <p className="line-clamp-1 w-13">{item.name}</p>
                         <p className="line-clamp-1 w-55">{item[itemKey]}</p>
                       </div>
                     ))}
