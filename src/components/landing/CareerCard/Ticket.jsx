@@ -15,12 +15,10 @@ const Ticket = ({ title, list, itemKey }) => {
   const carouselRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(window.innerWidth < 768 ? 4 : 8);
-  const [hasArrows, setHasArrow] = useState(window.innerWidth >= 1100);
 
   useEffect(() => {
     const handleResize = () => {
       setItemsPerPage(window.innerWidth < 768 ? 4 : 8);
-      setHasArrow(window.innerWidth >= 1100);
     };
 
     window.addEventListener('resize', handleResize);
@@ -92,7 +90,7 @@ const Ticket = ({ title, list, itemKey }) => {
               ref={carouselRef}
               className="top-0 left-0 z-10 h-50 w-full"
               infinite
-              arrows={hasArrows}
+              arrows
               autoplay
               autoplaySpeed={6000}
               dots={false}
