@@ -15,12 +15,10 @@ const Ticket = ({ title, list, itemKey }) => {
   const carouselRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(window.innerWidth < 640 ? 4 : 8);
-  const [hasArrows, setHasArrow] = useState(window.innerWidth >= 1100);
 
   useEffect(() => {
     const handleResize = () => {
       setItemsPerPage(window.innerWidth < 640 ? 4 : 8);
-      setHasArrow(window.innerWidth >= 1100);
     };
 
     window.addEventListener('resize', handleResize);
@@ -28,7 +26,7 @@ const Ticket = ({ title, list, itemKey }) => {
   }, []);
 
   // 分页函数
-  const paginateData = (data) => {
+  const paginateData = data => {
     const pages = [];
     for (let i = 0; i < data.length; i += itemsPerPage) {
       pages.push(data.slice(i, i + itemsPerPage));
@@ -101,9 +99,9 @@ const Ticket = ({ title, list, itemKey }) => {
             >
               {pages.map((page, pageIndex) => (
                 <div key={pageIndex} className="carousel-page">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 p-0 ">
+                  <div className="grid grid-cols-1 p-0 sm:grid-cols-2">
                     {page.map((item, index) => (
-                      <div key={index} className="grid grid-cols-[80px_80px_1fr] text-base p-2">
+                      <div key={index} className="grid grid-cols-[80px_80px_1fr] p-2 text-base">
                         <p className="">{item.grade}</p>
                         <p className="">{item.name}</p>
                         <p className="line-clamp-1">{item[itemKey]}</p>

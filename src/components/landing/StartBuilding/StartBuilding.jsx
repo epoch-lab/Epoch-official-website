@@ -9,8 +9,8 @@ const StartBuilding = () => {
           <h2 className="start-building-title">加入我们</h2>
           <p className="start-building-subtitle">Talk is cheap. Show me the code. —— Linus Torvalds</p>
 
-          <Link to="https://fresh.cuit.dev/" className="start-building-button">
-            fresh.cuit.dev
+          <Link to="https://pass.cuit.dev/" target="_blank" className="start-building-button">
+            EPASS
           </Link>
         </div>
       </div>
